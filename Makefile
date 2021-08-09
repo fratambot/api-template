@@ -4,17 +4,22 @@
 #    py.test tests
 
 #.PHONY: init #test
+shell:
+	poetry shell
+.PHONY: shell
 
 start:
-	poetry shell
-	uvicorn api.main:app --reload --port=8080
+	poetry run uvicorn api.main:app --reload --port=8080
 .PHONY: start
 
 test:
-	poetry shell
-	pytest -vv --durations=3
+	poetry run pytest -vv --durations=3
 .PHONY: test
 
 format:
-	pre-commit run --all-files
+	poetry run pre-commit run --all-files
 .PHONY: format
+
+notebook:
+	poetry run jupyter notebook
+.PHONY: notebook

@@ -1,2 +1,2 @@
 # api-template
-a template for an API in python
+A template for an API in python
