@@ -26,7 +26,7 @@ To run tests:
 
 If you want to check the formatting of your code:
     make format
-(It will launch a pre-commit hook including ``black``and ``flake8``)
+(It will launch a pre-commit hook including ``black`` and ``flake8``)
 
 If you want to open a poetry shell which uses the virtual environment and all the dependencies:
     make shell
