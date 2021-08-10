@@ -1,11 +1,9 @@
 # api-template
 A template for an API in python
 
----
 
 # Docker
 
----
 
 ## Build
 
@@ -15,7 +13,6 @@ Use `make build` to build the image
 
 Use `make start` to run the service on `localhost:8000` (**not working**)
 
----
 
 # Poetry
 
