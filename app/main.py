@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 
 # custom modules
-from models.algebra import array
-from models.datawiz import transformations as t
+from app.models.algebra import array
+from app.models.datawiz import transformations as t
 
 # a =  array.get_random()
 # print("array here = ", a.tolist())
@@ -13,7 +13,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"msg": "Hello World"}
+    return {"msg": "Hello Universe"}
 
 @app.get("/array")
 def get_array():
