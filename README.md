@@ -12,6 +12,12 @@ In order to update the dependencies (if needed) it is suggested to run from term
 
 You can use the makefile for all operations.
 
+To run the api:
+
+    make start
+    
+The api will run on http://localhost:8080
+
 To open a notebook:
 
     make notebook
