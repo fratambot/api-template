@@ -2,12 +2,15 @@
 A template for an API in python
 
 # Installation
-You need to install poetry
+You need to install poetry to install and use the api. Refer to the official guidelines here: https://python-poetry.org/docs/#installation
+
+In order to update the dependencies (if needed) it is suggested to run from terminal:
+
+    poetry install
 
 # Poetry
 
-You can use the makefile for all operations on local machine.
-**TODO:** And from inside docker container ? 
+You can use the makefile for all operations.
 
 To open a notebook:
 
