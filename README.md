@@ -8,4 +8,6 @@ A template for an API in python
 Use `make build` to build the image
 
 ## Run
-Use `make start` to run the service on `localhost`
+Use `make start` to run the service on http://localhost
+
+You can find the FastApi UI under http://localhost/docs
