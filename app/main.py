@@ -4,16 +4,11 @@ from fastapi import FastAPI
 from models.algebra import array
 from models.datawiz import transformations as t
 
-# a =  array.get_random()
-# print("array here = ", a.tolist())
-# print("json array = ", t.ndarray_to_json(a))
-
 app = FastAPI()
-
 
 @app.get("/")
 def read_root():
-    return {"msg": "Hello World"}
+    return {"msg": "Hello Universe"}
 
 @app.get("/array")
 def get_array():

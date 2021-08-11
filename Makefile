@@ -1,25 +1,9 @@
-#init:
-#    poetry install --no-root
-#test:
-#    py.test tests
+# Docker
 
-#.PHONY: init #test
-shell:
-	poetry shell
-.PHONY: shell
+build:
+	docker build --tag api-template --file docker/Dockerfile .
+.PHONY: build
 
 start:
-	poetry run uvicorn api.main:app --reload --port=8080
+	docker run -d --name api-template-container -p 80:80 api-template
 .PHONY: start
-
-test:
-	poetry run pytest -vv --durations=3
-.PHONY: test
-
-format:
-	poetry run pre-commit run --all-files
-.PHONY: format
-
-notebook:
-	poetry run jupyter notebook
-.PHONY: notebook

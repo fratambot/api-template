@@ -1,22 +1,20 @@
 # api-template
 A template for an API in python
 
-# Installation
-You need to install poetry to install and use the api. Refer to the official guidelines here: https://python-poetry.org/docs/#installation
 
-In order to update the dependencies (if needed) it is suggested to run from terminal:
+# Docker
 
-    poetry install
+## Build
+Use `make build` to build the image
+
+## Run
+Use `make start` to run the service on `localhost:8000` (**not working**)
+
 
 # Poetry
 
-You can use the makefile for all operations.
-
-To run the api:
-
-    make start
-    
-The api will run on http://localhost:8080
+You can use the makefile for all operations on local machine.
+**TODO:** And from inside docker container ?
 
 To open a notebook:
 
@@ -29,7 +27,7 @@ To run tests:
 If you want to check the formatting of your code:
 
     make format
-    
+
 (It will launch a pre-commit hook including ``black`` and ``flake8``)
 
 If you want to open a poetry shell which uses the virtual environment and all the dependencies:
