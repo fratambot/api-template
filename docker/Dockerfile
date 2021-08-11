@@ -1,76 +1,31 @@
-#Dockerfile multistage build
+#Dockerfile minimal
 
-# ----- Stage 1
 # Creating a fastapi base with shared environment variables
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8 as base
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8
 
-    #python
+WORKDIR /app
+
+    # python
 ENV PYTHONFAULTHANDLER=1 \
     PYTHONHASHSEED=random \
     PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    \
-    #pip
-    PIP_NO_CACHE_DIR=off \
-    PIP_DISABLE_PIP_VERSION_CHECK=on \
-    PIP_DEFAULT_TIMEOUT=100 \
-    \
-    #poetry
-    # https://python-poetry.org/docs/configuration/#using-environment-variables
-    # make poetry install to this location
-    POETRY_HOME="/opt/poetry" \
-    # make poetry create the virtual environment in the project's root
-    # it gets named '.venv'
-    POETRY_VIRTUALENVS_IN_PROJECT=true \
-    POETRY_NO_INTERACTION=1 \
-    \
-    # paths
-    # this is where requirements + virtual environment will live
-    PYSETUP_PATH="/opt/pysetup" \
-    VENV_PATH="/opt/pysetup/.venv"
+    PYTHONDONTWRITEBYTECODE=1
 
-ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
+    # poetry
+ENV POETRY_VERSION=1.0.0
 
-# ----- Stage 2
-# Build dependencies
-FROM base as builder
+# Install Poetry
+RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | POETRY_HOME=/opt/poetry python && \
+    cd /usr/local/bin && \
+    ln -s /opt/poetry/bin/poetry && \
+    poetry config virtualenvs.create false
 
-ENV  POETRY_VERSION=1.0.0
+# because we are in docker folder
+#WORKDIR /
 
-# Install poetry respecting $POETRY_VERSION and $POETRY_HOME:
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+# Copy using poetry.lock* in case it doesn't exist yet
+COPY pyproject.toml poetry.lock* /app/
 
-# Copying Python requirements here to cache them
-# and install only runtime deps using poetry
-WORKDIR $PYSETUP_PATH
-COPY poetry.lock pyproject.toml ./
-RUN poetry install --no-dev
+RUN poetry install --no-root --no-dev
 
-# ----- Stage 3:dev
-# Development stage install all dev deps
-FROM base as development
-# use it later in some script to distinguish between dev and prod build
-ENV FASTAPI_ENV=development
-
-# Copying poetry and venv into image
-COPY --from=builder $POETRY_HOME $POETRY_HOME
-COPY --from=builder $PYSETUP_PATH $PYSETUP_PATH
-
-# Copying entrypoint (activate venv)
-COPY ./docker/docker-entrypoint.sh /docker-entrypoint.sh
-RUN chmod +x /docker-entrypoint.sh
-
-# move to venv which has runtime deps already installed and install dev deps
-WORKDIR $PYSETUP_PATH
-RUN poetry install
-
-WORKDIR /app
-COPY . .
-
-EXPOSE 8000
-ENTRYPOINT /docker-entrypoint.sh $0 $@
-CMD ["uvicorn", "--reload", "--host=0.0.0.0", "--port=8000", "main:app"]
-
-# ----- Stage 3:prod TODO
-# Production stage should use the clean base stage and copy
-# only the runtime deps installed in the builder stage
+COPY ./app /app

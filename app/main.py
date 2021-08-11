@@ -1,15 +1,10 @@
 from fastapi import FastAPI
 
 # custom modules
-from app.models.algebra import array
-from app.models.datawiz import transformations as t
-
-# a =  array.get_random()
-# print("array here = ", a.tolist())
-# print("json array = ", t.ndarray_to_json(a))
+from models.algebra import array
+from models.datawiz import transformations as t
 
 app = FastAPI()
-
 
 @app.get("/")
 def read_root():
