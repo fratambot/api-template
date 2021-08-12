@@ -12,8 +12,9 @@ By default the image is built in "development mode". You can change to "producti
 
 ## Usage
 * Use `make start` to run the service
-      * You can find the api doc under http://localhost:8080/docs
-      * There's also a jupyter notebook to play with on http://localhost:8888
-        Note that...
+    * You can find the api doc under http://localhost:8080/docs
+    * There's also a jupyter notebook to play with on http://localhost:8888
+      
+      Note that...
 
 * Use `make stop` to stop the service
