@@ -11,10 +11,9 @@ By default the image is built in "development mode". You can change to "producti
 **Note that** `TARGET_ENV` is required by `docker-compose.yml`
 
 ## Usage
-- Use `make start` to run the service
-  
-      - You can find the api doc under http://localhost:8080/docs
-      - There's also a jupyter notebook to play with on http://localhost:8888
+* Use `make start` to run the service
+      * You can find the api doc under http://localhost:8080/docs
+      * There's also a jupyter notebook to play with on http://localhost:8888
         Note that...
 
-- Use `make stop` to stop the service
+* Use `make stop` to stop the service
