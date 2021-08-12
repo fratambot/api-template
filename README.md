@@ -7,6 +7,7 @@ A template for an API in python
 
 ## Configuration
 By default the image is built in "development mode". You can change to "production mode" by setting the appropriate value in the `TARGET_ENV` environment variable contained in the `.env` file.
+
 **Note that** `TARGET_ENV` is required by `docker-compose.yml`
 
 ## Usage
