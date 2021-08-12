@@ -2,8 +2,8 @@
 A template for an API in python
 
 ## Requirements
-- Install [Docker][https://docs.docker.com/get-docker/]
-- (Linux only) Install [Docker Compose][https://docs.docker.com/compose/install/]
+- Install [Docker](https://docs.docker.com/get-docker/)
+- (Linux only) Install [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Configuration
 By default the image is built as "development". You can change to "production" by setting the appropriate value in the `.env` file.
