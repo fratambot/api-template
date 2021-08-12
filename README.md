@@ -1,5 +1,5 @@
 # api-template
-A template for an API in python
+A Dockerized template for a [FastApi](https://fastapi.tiangolo.com/) in python with a [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) service to play with :)
 
 ## Requirements
 - Install [Docker](https://docs.docker.com/get-docker/)
