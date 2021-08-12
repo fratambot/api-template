@@ -13,7 +13,7 @@ By default the image is built in "development mode". You can change to "producti
 ## Usage
 * Use `make start` to run the service
     * You can find the [interactive api docs](https://fastapi.tiangolo.com/tutorial/first-steps/#interactive-api-docs) on http://localhost:8080/docs
-    * There's also a jupyter notebook to play with on http://localhost:8888 (remember to `os.chdir("..)` from notebooks folder in order to import app packages)
+    * There's also a jupyter notebook to play with on http://localhost:8888 (remember to `os.chdir("..")` from notebooks folder in order to import app packages)
       
       **Note that** you need a token to access the notebook. You can find it in yout container logs:
       ```    
