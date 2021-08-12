@@ -4,10 +4,10 @@ A template for an API in python
 
 # Docker
 
-## Build
-Use `make build` to build the image
+## Usage
 
-## Run
-Use `make start` to run the service on http://localhost
+Use `make start` to run the service on http://localhost:8080
 
-You can find the FastApi UI under http://localhost/docs
+You can find the FastApi UI under http://localhost:8080/docs
+
+Use `make stop` to stop the service
