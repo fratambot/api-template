@@ -1,0 +1,20 @@
+# ENV variables required:
+# TARGET_ENV (set on "development" by default. See .env and change it)
+version: '3.8'
+
+services:
+
+    api:
+        build:
+          dockerfile: ./docker/Dockerfile
+          context: .
+          target: ${TARGET_ENV:?Target Environment}
+        image: api-template-server
+        ports:
+          - 8080:8080
+        volumes:
+          - ./app:/app
+        command: uvicorn main:app --reload --port=8080 --host="0.0.0.0"
+        restart: unless-stopped
+        stdin_open: true
+        tty: true
