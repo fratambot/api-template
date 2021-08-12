@@ -1,8 +1,9 @@
 # api-template
 A template for an API in python
 
-
-# Docker
+## Configuration
+By default the image is built as "development". You can change to "production" by setting the appropriate value in the `.env` file.
+**Note that** `TARGET_ENV` is required by `docker-compose.yml`
 
 ## Usage
 
