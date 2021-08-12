@@ -13,8 +13,11 @@ By default the image is built in "development mode". You can change to "producti
 ## Usage
 * Use `make start` to run the service
     * You can find the api doc under http://localhost:8080/docs
-    * There's also a jupyter notebook to play with on http://localhost:8888
+    * There's also a jupyter notebook to play with on http://localhost:8888 (remember to `os.chdir("..)` from notebooks folder in order to import app packages)
       
-      Note that...
+      **Note that** you need a token to access the notebook. You can find it in yout container logs:
+          docker logs <container_id_or_name>
+      Example:
+      
 
 * Use `make stop` to stop the service
