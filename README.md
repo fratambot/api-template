@@ -20,7 +20,8 @@ By default the image is built in "development mode". You can change to "producti
       docker logs <container_id_or_name>
       ```
       Example:
+      <pre>
+      http://127.0.0.1:8888/?token=<b>89fca8197510f36fd4761107bd0bc9539a88ff6dd536b9b8</b>
+      </pre>
       
-      
-
 * Use `make stop` to stop the service
