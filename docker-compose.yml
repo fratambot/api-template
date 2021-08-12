@@ -18,3 +18,10 @@ services:
         restart: unless-stopped
         stdin_open: true
         tty: true
+    notebook:
+        image: api-template-server
+        depends_on:
+          - api
+        ports:
+          - 8888:8888
+        command: jupyter notebook --no-browser --allow-root --port=8888 --ip="0.0.0.0"

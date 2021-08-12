@@ -8,7 +8,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"msg": "Hello Universe"}
+    return {"msg": "Hello Universe !"}
 
 @app.get("/array")
 def get_array():
