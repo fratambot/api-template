@@ -7,8 +7,7 @@ By default the image is built as "development". You can change to "production" b
 
 ## Usage
 
-Use `make start` to run the service on http://localhost:8080
+- Use `make start` to run the service on http://localhost:8080 
+  You can find the api doc under http://localhost:8080/docs
 
-You can find the FastApi UI under http://localhost:8080/docs
-
-Use `make stop` to stop the service
+- Use `make stop` to stop the service
