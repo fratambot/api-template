@@ -1,9 +1,9 @@
-# Docker
-
-build:
-	docker build --tag api-template --file docker/Dockerfile .
-.PHONY: build
-
 start:
-	docker run -d --name api-template-container -p 80:80 api-template
+	@echo "\n${BOLD}Starting containers..${NORMAL} 🐳"
+	docker-compose up -d
 .PHONY: start
+
+stop: ## Stop local Docker environment
+	@echo "\n${BOLD}Stopping containers..${NORMAL} 👋" && \
+	docker-compose stop
+.PHONY: stop
