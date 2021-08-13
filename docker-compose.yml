@@ -1,5 +1,9 @@
 # ENV variables required:
-# TARGET_ENV (set on "development" by default. See .env and change it)
+# TARGET_ENV
+# NOTEBOOKS_FOLDER
+#
+# (See .env and change them !)
+#
 version: '3.8'
 
 services:
@@ -8,7 +12,7 @@ services:
         build:
           dockerfile: ./docker/Dockerfile
           context: .
-          target: ${TARGET_ENV:?Target Environment}
+          target: ${TARGET_ENV:?Target Environment Missing}
         image: api-template-server
         ports:
           - 8080:8080
@@ -24,4 +28,6 @@ services:
           - api
         ports:
           - 8888:8888
-        command: jupyter notebook --no-browser --allow-root --port=8888 --ip="0.0.0.0"
+        volumes:
+          - ${NOTEBOOKS_FOLDER}:/app/notebooks
+        command: jupyter notebook --no-browser --allow-root --NotebookApp.token='' --port=8888 --ip="0.0.0.0"
