@@ -2,15 +2,9 @@ from fastapi import FastAPI
 
 # custom modules
 from models.algebra import array
-
-
-
-
-    
-
 from models.datawiz import transformations as t
 
-app = FastAPI()
+app =    FastAPI()
 
 
 @app.get("/")
