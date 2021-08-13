@@ -6,9 +6,11 @@ from models.datawiz import transformations as t
 
 app = FastAPI()
 
+
 @app.get("/")
 def read_root():
     return {"msg": "Hello Universe !"}
+
 
 @app.get("/array")
 def get_array():
