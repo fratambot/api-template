@@ -1,6 +1,8 @@
 # api-template
 A Dockerized template for a [FastApi](https://fastapi.tiangolo.com/) in python with a persistent [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) service to play with :)
 
+(Poetry is used only as a dependency manager here. Virtalenvs creation is suppresed in order to avoid "isolation inception" inside Docker 😵‍💫 )
+
 ## Requirements
 - Install [Docker](https://docs.docker.com/get-docker/)
 - (Linux only) Install [Docker Compose](https://docs.docker.com/compose/install/)
