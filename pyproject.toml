@@ -29,7 +29,5 @@ exclude = '''
     \.git
   | \.hg
   | \.mypy_cache
-  | venv
-  | .venv
 )/
 '''
