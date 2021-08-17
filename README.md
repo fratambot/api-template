@@ -29,4 +29,22 @@ The bulk of your Python code should live in the `models` folder and you should u
 * Use `make stop` to stop the service .
 
 ## Development
+* Use `make test` to run the tests
 
+* Use `make lint` to run formatting and lintering (black + pylint) from docker. **Notice thet** the source code won't be changed and the image will not be rebuilt ! This stage for now is more an "evaluation" on the code you used to build the image (see "Future developments").
+
+## Local development
+For local (actual !) development you should [install Poetry](https://python-poetry.org/docs/#installation) on your machine and then from the `api-template` folder run:
+    poetry install --no-root
+    
+A virtual environment with all the packages specified in the `pyproject.toml` file will be created.
+
+* Use `poetry add <name_of_the_package>` if you want to [add a new package](https://python-poetry.org/docs/cli/#add). Poetry will automatically manage the interdependencies 💓
+
+* You can use the script `make local-lint` to format and lint your code. **Notice that** differently from the lint stage, black **will** reformat your code !
+
+## Future developments
+
+* The template is not properly configured for production yet. The production stage is just installing a subset of deps wrt the development stage. In production the whole app should not be copied. Also, in a CI/CD context the linting should happen as a pre-commit hook (Husky + Lint staged ? Lefthook ?) and the test stage should just trying to build and image and fail if test are not passed (`RUN pytest -vv` instead of `CMD ["pytest", "-vv"]`).
+
+* Maybe add a mongodb service ? It seems to me like a basic service for a data science api (e.g. if you have your data on some cloud storage service and you need to connect to)
