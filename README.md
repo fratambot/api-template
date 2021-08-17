@@ -1,11 +1,12 @@
 # api-template
 A Dockerized template for a [FastApi](https://fastapi.tiangolo.com/) in python with a persistent [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) service to play with :)
 
-(Poetry is used only as a - great ! - dependency manager here. Virtalenvs creation is suppresed in order to avoid "isolation inception" inside Docker 😵‍💫 )
+(Notice that Poetry is used only as a - great ! - dependency manager here. Virtualenvs creation is suppresed in order to avoid "isolation inception" inside Docker 😵‍💫 )
 
 ## Requirements
 - Install [Docker](https://docs.docker.com/get-docker/)
 - (Linux only) Install [Docker Compose](https://docs.docker.com/compose/install/)
+- (Local development only) Install [Poetry](https://python-poetry.org/docs/#installation)
 
 ## Configuration
 You have to set up the following environment variables in the `.env` file because thay are **required** by `docker-compose.yml`:
