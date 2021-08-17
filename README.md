@@ -39,7 +39,7 @@ For local (actual !) development you need to [install Poetry](https://python-poe
     
 A virtual environment with all the packages specified in the `pyproject.toml` file will be created.
 
-* Use `poetry add <name_of_the_package>` if you want to [add a new package](https://python-poetry.org/docs/cli/#add). Poetry will automatically manage all the interdependencies 💓
+* Use `poetry add <name_of_the_package>` if you want to [add a new package](https://python-poetry.org/docs/cli/#add) (use `--dev` if you want the package only in development mode). Poetry will automatically manage all the interdependencies 🤩 .
 
 * You can use the script `make local-lint` to format and lint your code. **Notice that**, unlike the lint stage, black **will** reformat your code !
 
