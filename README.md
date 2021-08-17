@@ -23,10 +23,10 @@ The bulk of your Python code should live in the `app\models` folder and you shou
 
 ## Usage
 * Use `make start` to run the service
-    * You can find the [interactive api docs](https://fastapi.tiangolo.com/tutorial/first-steps/#interactive-api-docs) on http://localhost:8080/docs .
+    * You can find the [interactive api docs](https://fastapi.tiangolo.com/tutorial/first-steps/#interactive-api-docs) on http://localhost:8080/docs.
     * There's also a jupyter notebook to play with on http://localhost:8888 . The docker `app\notebooks` folder come with an example importing a module from a custom package.
 
-* Use `make stop` to stop the service .
+* Use `make stop` to stop the service.
 
 ## Development
 * Use `make test` to run the tests
