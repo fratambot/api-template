@@ -12,7 +12,7 @@ A Dockerized template for a [FastApi](https://fastapi.tiangolo.com/) in python w
 You have to set up the following environment variables in the `.env` file because thay are **required** by `docker-compose.yml`:
 
 * `TARGET_ENV`: choose between `development` or `production`; in development mode additional deps will be installed in the image.
-* `NOTEBOOKS_FOLDER`: put the **absolute path** to a folder on your machine where you want to retrieve and store the Jupyter notebooks you create and save in the docker notebooks folder.
+* `NOTEBOOKS_FOLDER`: put the **absolute path** to a folder on your machine where you want to retrieve and store the Jupyter notebooks you create and save in the docker `notebooks` folder.
 
 ## Project Structure
 The project structure is a variation on [Kenneth Reitz recommendations](https://docs.python-guide.org/writing/structure/#sample-repository).
