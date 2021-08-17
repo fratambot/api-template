@@ -35,6 +35,7 @@ The bulk of your Python code should live in the `app\models` folder and you shou
 
 ## Local development
 For local (actual !) development you need to [install Poetry](https://python-poetry.org/docs/#installation) on your machine and then from the `api-template` folder run:
+
     poetry install --no-root
     
 A virtual environment with all the packages specified in the `pyproject.toml` file will be created.
