@@ -45,6 +45,6 @@ A virtual environment with all the packages specified in the `pyproject.toml` fi
 
 ## Future developments
 
-* The template is not properly configured for production yet. The production stage is just installing a subset of deps wrt the development stage. In production the whole app should not be copied. Also, in a CI/CD context the linting should happen as a pre-commit hook (Husky + Lint staged ? Lefthook ?) and the test stage should just trying to build and image and fail if test are not passed (`RUN pytest -vv` instead of `CMD ["pytest", "-vv"]`).
+* The template is not properly configured for production yet. The production stage is just installing a subset of deps wrt the development stage. In production the whole app should not be copied. Also, in a CI/CD context the linting should happen as a pre-commit hook ([Husky + Lint staged ? Lefthook ?](https://dev.to/nitzano/linting-docker-containers-2lo6)) and the test stage should just trying to build and image and fail if test are not passed (`RUN pytest -vv` instead of `CMD ["pytest", "-vv"]`).
 
 * Maybe add a mongodb service ? It seems to me like a basic service for a data science api (e.g. if you have your data on some cloud storage service and you need to connect to)
