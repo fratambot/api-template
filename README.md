@@ -31,7 +31,7 @@ The bulk of your Python code should live in the `models` folder and you should u
 ## Development
 * Use `make test` to run the tests
 
-* Use `make lint` to run formatting and lintering (black + pylint) from docker. **Notice thet** the source code won't be changed and the image will not be rebuilt ! This stage for now is more an "evaluation" on the code you used to build the image (see "Future developments").
+* Use `make lint` to run formatting and lintering (black + pylint) from docker. **Notice thet** the source code won't be changed and the image will not be rebuilt ! This stage for now is more an "evaluation" on the code you used to build the image (see "Future developments" section).
 
 ## Local development
 For local (actual !) development you need to [install Poetry](https://python-poetry.org/docs/#installation) on your machine and then from the `api-template` folder run:
