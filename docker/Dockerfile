@@ -29,7 +29,7 @@ RUN poetry config virtualenvs.create false
 
 # Copy using poetry.lock* in case it doesn't exist yet
 # (we want these 2 files in every stage)
-COPY ./pyproject.toml ./poetry.lock /app/
+COPY ./pyproject.toml ./poetry.lock* /app/
 
 # development stage install all dev deps
 FROM base as development
@@ -46,7 +46,7 @@ COPY ./tests /tests
 WORKDIR /tests
 CMD ["pytest", "-vv"]
 
-# lint stage runs
+# lint stage runs black in --diff mode and pylint (see app/scripts/lint.sh)
 FROM development as lint
 COPY ./tests /tests
 COPY ./scripts/lint.sh lint.sh
