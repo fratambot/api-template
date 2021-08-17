@@ -41,10 +41,10 @@ A virtual environment with all the packages specified in the `pyproject.toml` fi
 
 * Use `poetry add <name_of_the_package>` if you want to [add a new package](https://python-poetry.org/docs/cli/#add). Poetry will automatically manage all the interdependencies 💓
 
-* You can use the script `make local-lint` to format and lint your code. **Notice that** differently from the lint stage, black **will** reformat your code !
+* You can use the script `make local-lint` to format and lint your code. **Notice that**, unlike the lint stage, black **will** reformat your code !
 
 ## Future developments
 
-* The template is not properly configured for production yet. The production stage is just installing a subset of deps wrt the development stage. In production the whole app should not be copied. Also, in a CI/CD context the linting should happen as a pre-commit hook ([Husky + Lint staged ? Lefthook ?](https://dev.to/nitzano/linting-docker-containers-2lo6)) and the test stage should just trying to build and image and fail if test are not passed (`RUN pytest -vv` instead of `CMD ["pytest", "-vv"]`).
+* The template is not properly configured for production yet. The production stage is just installing a subset of deps wrt the development stage. In production the whole app should not be copied. Also, in a CI/CD context the linting should happen as a pre-commit hook ([Husky + Lint staged ? Lefthook ?](https://dev.to/nitzano/linting-docker-containers-2lo6)) and the test stage should just trying to build and image and fail if tests are not passed (`RUN pytest -vv` instead of `CMD ["pytest", "-vv"]`).
 
 * Maybe add a mongodb service ? It seems to me like a basic service for a data science api (e.g. if you have your data on some cloud storage service and you need to connect to)
